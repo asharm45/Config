@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootStack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.TestSuiteController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane layoutY="-1.0" prefHeight="90.0" prefWidth="677.0" style="-fx-background-color: #0081FF;">
+               <children>
+                  <MaterialDesignIconView fx:id="closeIcon" fill="WHITE" glyphName="CLOSE" layoutX="639.0" layoutY="32.0" onMouseClicked="#closeStage" size="22.0" />
+                  <Text fill="WHITE" layoutX="274.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Suite">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="104.0" prefHeight="14.0" prefWidth="637.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="169.0" style="-fx-background-color: #008F82; -fx-min-height: 4; -fx-pref-height: 4;" text="Label" />
+                  <Circle fill="#e8e9eb" radius="7.0" stroke="#f39c12" strokeType="INSIDE" strokeWidth="3.0" />
+                  <Label prefHeight="17.0" prefWidth="265.0" style="-fx-pref-height: 4; -fx-background-color: #008F82; -fx-min-height: 4;" text="Label" />
+                  <Circle fill="#e8e9eb" radius="7.0" stroke="#f39c12" strokeType="INSIDE" strokeWidth="3.0" />
+                  <Label prefHeight="17.0" prefWidth="174.0" style="-fx-min-height: 4; -fx-pref-height: 4; -fx-background-color: #008F82;" text="Label" />
+               </children>
+            </HBox>
+            <Separator layoutX="328.0" layoutY="130.0" orientation="VERTICAL" prefHeight="364.0" prefWidth="14.0" />
+            <JFXTextField fx:id="moduleName" focusColor="#f39c12" labelFloat="true" layoutX="37.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="ModuleName" unFocusColor="#0055ff" />
+            <JFXTextField fx:id="scenarioName" focusColor="#f39c12" labelFloat="true" layoutX="37.0" layoutY="178.0" prefHeight="25.0" prefWidth="265.0" promptText="Scenarion Name" unFocusColor="#0055ff" />
+            <JFXTextField fx:id="tcName" focusColor="#f39c12" labelFloat="true" layoutX="37.0" layoutY="225.0" prefHeight="25.0" prefWidth="265.0" promptText="Test Case Name" unFocusColor="#0055ff" />
+            <JFXTextField fx:id="tcDescription" focusColor="#f39c12" labelFloat="true" layoutX="37.0" layoutY="273.0" prefHeight="25.0" prefWidth="265.0" promptText="Test Case Description" unFocusColor="#0055ff" />
+            <JFXComboBox fx:id="executionFlag" focusColor="#f39c12" labelFloat="true" layoutX="37.0" layoutY="321.0" prefHeight="25.0" prefWidth="265.0" promptText="Execution Flag" unFocusColor="#0055ff" />
+            <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="37.0" layoutY="397.0" onMouseClicked="#addBtnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #f39c12; -fx-padding: 0 0 0 35;" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="CHECK" layoutX="56.0" layoutY="418.0" size="16.0" />
+            <JFXButton fx:id="updateBtn" buttonType="RAISED" layoutX="184.0" layoutY="397.0" onMouseClicked="#updateBtnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-padding: 0 0 0 35; -fx-background-color: #008F82;" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" layoutX="199.0" layoutY="417.0" size="16.0" wrappingWidth="22.000017762184143" />
+            <JFXButton fx:id="deleteBtn" buttonType="RAISED" layoutX="120.0" layoutY="453.0" onMouseClicked="#DeleteBtnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #f39c12; -fx-padding: 0 0 0 35;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="DELETE" layoutX="137.0" layoutY="474.0" size="16.0" />
+            <TableView fx:id="testSuiteTable" layoutX="342.0" layoutY="131.0" prefHeight="301.0" prefWidth="326.0">
+              <columns>
+                <TableColumn fx:id="moduleName_Col" prefWidth="63.0" text="ModuleName" />
+                <TableColumn fx:id="Scenarion_Col" prefWidth="63.0" text="ScenarionName" />
+                  <TableColumn fx:id="TC_Col" prefWidth="67.0" text="TC No" />
+                  <TableColumn fx:id="TCDescription_Col" prefWidth="72.0" text="TC Description" />
+                  <TableColumn fx:id="ExecutionFlag_Col" prefWidth="110.0" text="Execution Flag" />
+              </columns>
+            </TableView>
+            <JFXTextField fx:id="Filtertxt" focusColor="#f39c12" labelFloat="true" layoutX="418.0" layoutY="455.0" onKeyReleased="#search" promptText="Filter..." unFocusColor="#0055ff" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

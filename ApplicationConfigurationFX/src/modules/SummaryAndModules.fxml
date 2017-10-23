@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootStack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.SummaryAndModulesController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="88.0" prefWidth="757.0" style="-fx-background-color: #0081FF;">
+               <children>
+                  <Text fill="WHITE" layoutX="254.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary And Modules">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <MaterialDesignIconView fx:id="close" fill="WHITE" glyphName="CLOSE" layoutX="719.0" layoutY="35.0" onMouseClicked="#closeStage" size="24.0" />
+               </children>
+            </Pane>
+            <Separator layoutX="382.0" layoutY="88.0" orientation="VERTICAL" prefHeight="442.0" prefWidth="2.0" />
+            <JFXTextField fx:id="domain" focusColor="#f39c12" labelFloat="true" layoutX="22.0" layoutY="103.0" prefHeight="25.0" prefWidth="267.0" promptText="Domain" unFocusColor="#1500ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="subDomain" focusColor="#f39c12" labelFloat="true" layoutX="22.0" layoutY="166.0" prefHeight="25.0" prefWidth="267.0" promptText="Sub Domain" unFocusColor="#1500ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="project" focusColor="#f39c12" labelFloat="true" layoutX="22.0" layoutY="228.0" prefHeight="25.0" prefWidth="267.0" promptText="Projects" unFocusColor="#1500ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="type" focusColor="#f39c12" labelFloat="true" layoutX="22.0" layoutY="287.0" prefHeight="25.0" prefWidth="267.0" promptText="Type" unFocusColor="#1500ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="environment" focusColor="#f39c12" labelFloat="true" layoutX="22.0" layoutY="344.0" prefHeight="25.0" prefWidth="267.0" promptText="Enrivonment" unFocusColor="#1500ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="language" focusColor="#f39c12" labelFloat="true" layoutX="22.0" layoutY="403.0" prefHeight="25.0" prefWidth="267.0" promptText="Language" unFocusColor="#1500ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="addSummary" alignment="CENTER" layoutX="24.0" layoutY="467.0" onMouseClicked="#addSummaryAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #f39c12; -fx-alignment: LEFT; -fx-padding: 0 0 0 20;" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="updateSummary" alignment="CENTER_RIGHT" layoutX="135.0" layoutY="467.0" onMouseClicked="#updateSummaryAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #008F82;" text="Update" textFill="WHITE" />
+            <MaterialDesignIconView fill="WHITE" glyphName="CHECK" layoutX="33.0" layoutY="489.0" size="16.0" />
+            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" layoutX="147.0" layoutY="488.0" size="16.0" wrappingWidth="16.00000897049904" />
+            <JFXButton fx:id="loadSummary" alignment="CENTER" layoutX="250.0" layoutY="467.0" onMouseClicked="#loadSummaryAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #f39c12; -fx-alignment: LEFT; -fx-padding: 0 0 0 20;" text="Load" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="LOAD" layoutX="259.0" layoutY="488.0" size="16.0" />
+            <JFXTextField fx:id="module_no" focusColor="#f39c12" labelFloat="true" layoutX="414.0" layoutY="106.0" prefHeight="25.0" prefWidth="267.0" promptText="Module No" unFocusColor="#1500ff" />
+            <JFXTextField fx:id="module_name" focusColor="#f39c12" labelFloat="true" layoutX="414.0" layoutY="169.0" prefHeight="25.0" prefWidth="267.0" promptText="ModuleName" unFocusColor="#1500ff" />
+            <TableView fx:id="moduleTable" layoutX="415.0" layoutY="228.0" prefHeight="200.0" prefWidth="295.0">
+              <columns>
+                <TableColumn fx:id="moduleNo_Col" prefWidth="95.0" text="Module No" />
+                <TableColumn fx:id="moduleName_Col" prefWidth="204.0" text="Module Name" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="AddModule" alignment="CENTER" layoutX="415.0" layoutY="466.0" onMouseClicked="#addModuleAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #f39c12; -fx-alignment: LEFT; -fx-padding: 0 0 0 20;" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="updateModule" alignment="CENTER_RIGHT" layoutX="525.0" layoutY="466.0" onMouseClicked="#updateModuleAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #008F82;" text="Update" textFill="WHITE" />
+            <JFXButton fx:id="deleteModule" alignment="CENTER" layoutX="632.0" layoutY="467.0" onMouseClicked="#deleteModuleAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #f39c12; -fx-alignment: LEFT; -fx-padding: 0 0 0 20;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="CHECK" layoutX="422.0" layoutY="488.0" size="16.0" />
+            <MaterialDesignIconView fill="WHITE" glyphName="DELETE" layoutX="644.0" layoutY="486.0" size="16.0" />
+            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" layoutX="532.0" layoutY="487.0" size="16.0" wrappingWidth="16.00000897049904" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
